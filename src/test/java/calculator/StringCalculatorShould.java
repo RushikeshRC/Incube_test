@@ -17,11 +17,21 @@ class StringCalculatorShould {
 
 	@Test
 	public void testOneNumber() {
-		assertEquals(1, Calculator.add("1"));
+		assertEquals(3, Calculator.add("3"));
 	}
 
 	@Test
 	public void testTwoNumbers(){
-		assertEquals(3, Calculator.add("1,2"));
+		assertEquals(8, Calculator.add("6,2"));
 	}
+	
+	@Test
+    public void testThreeNumbers(){
+    	assertEquals(8, Calculator.add("1,3,4"));
+    }
+
+    @Test
+    public void testNewLine(){
+    	assertEquals(8, Calculator.add("1\n3,4"));
+    }
 }
