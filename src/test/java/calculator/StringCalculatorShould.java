@@ -34,4 +34,21 @@ class StringCalculatorShould {
     public void testNewLine(){
     	assertEquals(8, Calculator.add("1\n3,4"));
     }
+    
+    @Test
+    public void testNegativeNumver(){
+    	try {
+			Calculator.add("-1,3");
+		}
+		catch (IllegalArgumentException e){
+			assertEquals(e.getMessage(), "Negatives not allowed: -1");
+		}
+
+		try {
+			Calculator.add("2,-5,3,-7");
+		}
+		catch (IllegalArgumentException e){
+			assertEquals(e.getMessage(), "Negatives not allowed: -5,-7");
+		}
+    }
 }
